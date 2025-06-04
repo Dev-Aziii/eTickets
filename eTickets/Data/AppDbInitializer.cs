@@ -74,7 +74,11 @@ namespace eTickets.Data
                 {
                     context.Producers.AddRange(new List<Producer>()
                     {
-                        new Producer() { FullName = "Steven Spielberg", Bio = "American film director and producer.", ProfilePictureUrl = "https://dotnethow.net/images/producers/producer-1.jpeg" },
+                        new Producer() { 
+                            FullName = "Steven Spielberg", 
+                            Bio = "American film director and producer.", 
+                            ProfilePictureUrl = "https://dotnethow.net/images/producers/producer-1.jpeg" 
+                        },
                         new Producer() { FullName = "Christopher Nolan", Bio = "British-American film director, producer, and screenwriter.", ProfilePictureUrl = "https://dotnethow.net/images/producers/producer-2.jpeg" },
                         new Producer() { FullName = "Kathleen Kennedy", Bio = "American film producer and president of Lucasfilm.", ProfilePictureUrl = "https://dotnethow.net/images/producers/producer-3.jpeg" },
                         new Producer() { FullName = "Kevin Feige", Bio = "American film producer and president of Marvel Studios.", ProfilePictureUrl = "https://dotnethow.net/images/producers/producer-4.jpeg" },
@@ -89,63 +93,75 @@ namespace eTickets.Data
                     {
                         new Movie()
                         {
-                            Name = "Action Movie 1",
-                            Description = "An exciting action movie.",
-                            Price = 10.99,
-                            ImageUrl = "https://dotnethow.net/images/movies/movie-1.jpeg",
+                            Name = "Life",
+                            Description = "This is the Life movie description",
+                            Price = 39.50,
+                            ImageUrl = "http://dotnethow.net/images/movies/movie-3.jpeg",
                             StartDate = DateTime.Now.AddDays(-10),
                             EndDate = DateTime.Now.AddDays(10),
+                            CinemaId = 3,
+                            ProducerId = 3,
+                            MovieCategory = MovieCategory.Documentary
+                        },
+                        new Movie()
+                        {
+                            Name = "The Shawshank Redemption",
+                            Description = "This is the Shawshank Redemption description",
+                            Price = 29.50,
+                            ImageUrl = "http://dotnethow.net/images/movies/movie-1.jpeg",
+                            StartDate = DateTime.Now,
+                            EndDate = DateTime.Now.AddDays(3),
                             CinemaId = 1,
                             ProducerId = 1,
                             MovieCategory = MovieCategory.Action
                         },
                         new Movie()
                         {
-                            Name = "Comedy Movie 1",
-                            Description = "A hilarious comedy movie.",
-                            Price = 9.99,
-                            ImageUrl = "https://dotnethow.net/images/movies/movie-2.jpeg",
-                            StartDate = DateTime.Now.AddDays(-5),
-                            EndDate = DateTime.Now.AddDays(15),
-                            CinemaId = 2,
-                            ProducerId = 2,
-                            MovieCategory = MovieCategory.Comedy
-                        },
-                        new Movie()
-                        {
-                            Name = "Drama Movie 1",
-                            Description = "A touching drama movie.",
-                            Price = 12.99,
-                            ImageUrl = "https://dotnethow.net/images/movies/movie-3.jpeg",
-                            StartDate = DateTime.Now.AddDays(-20),
-                            EndDate = DateTime.Now.AddDays(5),
-                            CinemaId = 3,
-                            ProducerId = 3,
-                            MovieCategory = MovieCategory.Drama
-                        },
-                        new Movie()
-                        {
-                            Name = "Horror Movie 1",
-                            Description = "A scary horror movie.",
-                            Price = 8.99,
-                            ImageUrl = "https://dotnethow.net/images/movies/movie-4.jpeg",
-                            StartDate = DateTime.Now.AddDays(-2),
-                            EndDate = DateTime.Now.AddDays(20),
-                            CinemaId = 1,
+                            Name = "Ghost",
+                            Description = "This is the Ghost movie description",
+                            Price = 39.50,
+                            ImageUrl = "http://dotnethow.net/images/movies/movie-4.jpeg",
+                            StartDate = DateTime.Now,
+                            EndDate = DateTime.Now.AddDays(7),
+                            CinemaId = 4,
                             ProducerId = 4,
                             MovieCategory = MovieCategory.Horror
                         },
                         new Movie()
                         {
-                            Name = "Cartoon Movie 1",
-                            Description = "A fun cartoon movie.",
-                            Price = 7.99,
-                            ImageUrl = "https://dotnethow.net/images/movies/movie-5.jpeg",
-                            StartDate = DateTime.Now.AddDays(-1),
-                            EndDate = DateTime.Now.AddDays(30),
-                            CinemaId = 2,
-                            ProducerId = 5,
+                            Name = "Race",
+                            Description = "This is the Race movie description",
+                            Price = 39.50,
+                            ImageUrl = "http://dotnethow.net/images/movies/movie-6.jpeg",
+                            StartDate = DateTime.Now.AddDays(-10),
+                            EndDate = DateTime.Now.AddDays(-5),
+                            CinemaId = 1,
+                            ProducerId = 2,
+                            MovieCategory = MovieCategory.Documentary
+                        },
+                        new Movie()
+                        {
+                            Name = "Scoob",
+                            Description = "This is the Scoob movie description",
+                            Price = 39.50,
+                            ImageUrl = "http://dotnethow.net/images/movies/movie-7.jpeg",
+                            StartDate = DateTime.Now.AddDays(-10),
+                            EndDate = DateTime.Now.AddDays(-2),
+                            CinemaId = 1,
+                            ProducerId = 3,
                             MovieCategory = MovieCategory.Cartoon
+                        },
+                        new Movie()
+                        {
+                            Name = "Cold Soles",
+                            Description = "This is the Cold Soles movie description",
+                            Price = 39.50,
+                            ImageUrl = "http://dotnethow.net/images/movies/movie-8.jpeg",
+                            StartDate = DateTime.Now.AddDays(3),
+                            EndDate = DateTime.Now.AddDays(20),
+                            CinemaId = 1,
+                            ProducerId = 5,
+                            MovieCategory = MovieCategory.Drama
                         }
                     });
                     context.SaveChanges();
