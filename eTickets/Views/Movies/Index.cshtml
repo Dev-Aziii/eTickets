@@ -1,0 +1,38 @@
+﻿@model IEnumerable<eTickets.Models.Movie>
+
+@{
+    ViewData["Title"] = "List of Movies";
+}
+
+<div class="movies-container">
+    @foreach (var movie in Model)
+    {
+        <div class="movie-card">
+            <div class="image-container">
+                <img src="@movie.ImageUrl" alt="@movie.Name">
+                <a href="#" class="buy-button">Buy Ticket</a>
+            </div>
+            <div class="movie-info">
+                <h5>@movie.Name</h5>
+                <p>Cinema: @movie.Cinema.Name</p>
+                <p>Category: @movie.MovieCategory</p>
+                <p>@movie.StartDate.ToString("dd MMM yy") - @movie.EndDate.ToString("dd MMM yy")</p>
+				<p>
+                    <b>Status: </b>
+                    @if (movie.StartDate > DateTime.Now)
+                    {
+                        <span class="badge bg-primary">Upcoming</span>
+                    }
+                    else if (movie.EndDate < DateTime.Now)
+                    {
+                        <span class="badge bg-secondary">Ended</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">Now Showing</span>
+					}
+                </p>
+            </div>
+        </div>
+    }
+</div>
