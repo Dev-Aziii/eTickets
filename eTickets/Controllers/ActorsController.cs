@@ -1,5 +1,6 @@
 using eTickets.Data.Services;
 using eTickets.Models;
+using eTickets.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eTickets.Controllers
@@ -8,14 +9,26 @@ namespace eTickets.Controllers
     {
         private readonly IActorsService _service = service;
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 5)
         {
-            var allActors = await _service.GetAllAsync();
-            return View(allActors);
+            var totalActors = await _service.GetTotalCountAsync();
+            var actors = await _service.GetAllPaginatedAsync(pageNumber, pageSize);
+
+            var totalPages = (int)Math.Ceiling(totalActors / (double)pageSize);
+
+            var viewModel = new ActorListViewModel
+            {
+                Actors = actors,
+                CurrentPage = pageNumber,
+                TotalPages = totalPages
+            };
+
+            return View(viewModel);
         }
 
+
         // GET: Actors/Create
-        public  IActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }

@@ -26,6 +26,21 @@ namespace eTickets.Data.Services
             return result; 
         }
 
+        public async Task<IEnumerable<Actor>> GetAllPaginatedAsync(int pageNumber, int pageSize)
+        {
+            return await _context.Actors
+                                 .OrderBy(a => a.FullName)
+                                 .Skip((pageNumber - 1) * pageSize)
+                                 .Take(pageSize)
+                                 .ToListAsync();
+        }
+
+        public async Task<int> GetTotalCountAsync()
+        {
+            return await _context.Actors.CountAsync();
+        }
+
+
         public async Task<Actor> GetByIdAsync(int id)
         {
             var result = await _context.Actors.FirstOrDefaultAsync(a => a.Id == id);
