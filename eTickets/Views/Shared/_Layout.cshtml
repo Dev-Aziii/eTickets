@@ -1,89 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - eTickets</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Default BOOTSTRAP
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
+    -->
+
+    <!-- FastBootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/fastbootstrap@2.2.0/dist/css/fastbootstrap.min.css" rel="stylesheet" integrity="sha256-V6lu+OdYNKTKTsVFBuQsyIlDiRWiOmtC8VQ8Lzdm2i4=" crossorigin="anonymous">
+
+    <!-- MAIN CSS FILES-->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/movieCard.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/eTickets.styles.css" asp-append-version="true" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-light bg-light border-bottom shadow-sm mb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand fw-bold text-primary d-flex align-items-center gap-2 ps-5" asp-area="" asp-controller="Movies" asp-action="Index">
-                    <i class="bi bi-ticket-perforated fs-4"></i>
-                    eTickets
-                </a>
-                <!-- Offcanvas Toggle Button -->
-                <button class="btn btn-outline-secondary d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <i class="bi bi-list"></i>
-                </button>
-                <!-- Regular navbar links for large screens -->
-                <div class="d-none d-lg-flex pe-5 align-items-center">
-                    <ul class="navbar-nav ms-auto flex-row gap-3 align-items-center">
+        @await Html.PartialAsync("_Navbar")
 
-                        <!-- Management Dropdown -->
-                        <li class="nav-item dropdown position-relative">
-                            <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="managementDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-gear-fill"></i> Management
-                            </a>
-                            <ul class="dropdown-menu shadow position-absolute end-0 mt-0" aria-labelledby="managementDropdown">
-                                <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-video3"></i> Actors</a></li>
-                                <li><a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-building"></i> Cinemas</a></li>
-                                <li><a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-people-fill"></i> Producers</a></li>
-                            </ul>
-                        </li>
-                         
-                        <!-- Search Movie List -->
-                        <li class="nav-item">
-                            <form class="d-flex">
-                                <input class="form-control form-control-sm me-2" type="text" name="searchString" placeholder="Search movies" aria-label="Search">
-                                <button class="btn btn-outline-primary btn-sm" type="submit">
-                                    <i class="bi bi-search"></i>
-                                </button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Offcanvas Sidebar -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                    <i class="bi bi-ticket-perforated"></i> eTickets
-                </h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <ul>
-                    <!-- Search Movie List -->
-                    <li class="nav-item">
-                        <form class="d-flex">
-                            <input class="form-control form-control-sm me-2" type="text" name="searchString" placeholder="Search movies" aria-label="Search">
-                            <button class="btn btn-outline-primary btn-sm" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </form>
-                    </li>
-                    <!-- Management Dropdown -->
-                    <li class="nav-item dropdown position-relative">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="managementDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-gear-fill"></i> Management
-                        </a>
-                        <ul class="dropdown-menu shadow position-absolute end-0 mt-0" aria-labelledby="managementDropdown">
-                            <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-video3"></i> Actors</a></li>
-                            <li><a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-building"></i> Cinemas</a></li>
-                            <li><a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-people-fill"></i> Producers</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        @await Html.PartialAsync("_OffcanvasNavbar")
     </header>
 
     <div class="container-fluid">
@@ -92,14 +32,24 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted bg-body">
         <div class="container">
             &copy; 2025 - eTickets
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<!-- Bootstrap JS files 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    --> 
+    <!-- FastBootstarp Js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- MAIN Js Files-->
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/themeToggler.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+

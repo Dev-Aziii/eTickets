@@ -1,4 +1,4 @@
-﻿@model eTickets.Models.Actor
+@model eTickets.Models.Actor
 
 @{
     ViewData["Title"] = "Add Actor";
@@ -14,7 +14,9 @@
             <div class="card-body">
                 <h4 class="card-title mb-4 text-center">Add Actor</h4>
                 <form method="post" asp-action="Create">
+
                     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
                     <div class="row g-3 align-items-center">
                         <div class="col-md-4 text-center">
                             <img class="rounded-circle border border-secondary"
@@ -27,18 +29,18 @@
                         <div class="col-md-8">
                             <div class="mb-3">
                                 <label asp-for="ProfilePictureUrl" class="form-label"></label>
-                                <input asp-for="ProfilePictureUrl" class="form-control" placeholder="Enter profile picture URL" required />
+                                <input asp-for="ProfilePictureUrl" class="form-control bg-light text-dark" placeholder="Enter profile picture URL" />
                                 <span asp-validation-for="ProfilePictureUrl" class="text-danger"></span>
                             </div>
 
                             <div class="mb-3">
                                 <label asp-for="FullName" class="form-label"></label>
-                                <input asp-for="FullName" class="form-control" placeholder="Enter full name" required />
+                                <input asp-for="FullName" class="form-control bg-light text-dark" placeholder="Enter full name" />
                                 <span asp-validation-for="FullName" class="text-danger"></span>
                             </div>
                             <div class="mb-3">
                                 <label asp-for="Bio" class="form-label"></label>
-                                <textarea asp-for="Bio" class="form-control" rows="4" placeholder="Enter biography" required></textarea>
+                                <textarea asp-for="Bio" class="form-control bg-light text-dark" rows="4" placeholder="Enter biography"></textarea>
                                 <span asp-validation-for="Bio" class="text-danger"></span>
                             </div>
                         </div>
