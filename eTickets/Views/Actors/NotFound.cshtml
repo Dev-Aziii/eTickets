@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Page Not Found";
+}
+
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <img src="https://cdn.jsdelivr.net/gh/twbs/icons/icons/exclamation-triangle.svg"
+             alt="Page Not Found"
+             width="120"
+             class="mb-4" />
+        <h1 class="display-4 fw-bold text-danger mb-3">Oops! Page Not Found</h1>
+        <p class="lead text-muted mb-4">
+            The page you’re looking for doesn’t exist, has been moved, or was deleted.
+        </p>
+        <a asp-controller="Movies" asp-action="Index" class="btn btn-primary btn-lg">
+            <i class="bi bi-house-door-fill"></i> Back to Home
+        </a>
+    </div>
+</div>
