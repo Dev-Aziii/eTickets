@@ -1,0 +1,17 @@
+﻿@* _Navbar.cshtml *@
+<nav class="navbar fixed-top border-bottom shadow-sm mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold text-primary d-flex align-items-center gap-2 ps-5" asp-area="" asp-controller="Movies" asp-action="Index">
+            <i class="bi bi-ticket-perforated fs-4"></i>
+            eTickets
+        </a>
+        <!-- Offcanvas Toggle Button -->
+        <button class="btn btn-outline-secondary d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <i class="bi bi-list"></i>
+        </button>
+        <!-- Regular navbar links for large screens -->
+        <div class="d-none d-lg-flex pe-5 align-items-center">
+            @await Html.PartialAsync("_NavbarLinks")
+        </div>
+    </div>
+</nav>

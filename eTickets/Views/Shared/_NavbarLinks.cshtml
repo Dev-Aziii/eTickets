@@ -1,0 +1,49 @@
+﻿@* _NavbarLinks.cshtml *@
+<ul class="navbar-nav ms-auto flex-row gap-3 align-items-center">
+    <!-- Management Dropdown -->
+    <li class="nav-item dropdown position-relative">
+        <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" id="managementDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-gear-fill"></i> Management
+        </a>
+        <ul class="dropdown-menu shadow position-absolute end-0 mt-0" aria-labelledby="managementDropdown">
+            <li><a class="dropdown-item" asp-controller="Actors" asp-action="Index"><i class="bi bi-person-video3"></i> Actors</a></li>
+            <li><a class="dropdown-item" asp-controller="Cinemas" asp-action="Index"><i class="bi bi-building"></i> Cinemas</a></li>
+            <li><a class="dropdown-item" asp-controller="Producers" asp-action="Index"><i class="bi bi-people-fill"></i> Producers</a></li>
+        </ul>
+    </li>
+
+    <!-- Search Movie List -->
+    <li class="nav-item">
+        <form class="d-flex">
+            <input class="form-control form-control-sm me-2" type="text" name="searchString" placeholder="Search movies" aria-label="Search">
+            <button class="btn btn-outline-primary btn-sm" type="submit">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+    </li>
+
+    <!-- Theme Toggler -->
+    <li class="nav-item dropdown position-relative">
+        <a class="nav-link dropdown-toggle" href="#" id="bd-theme" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme">
+            <i class="bi bi-circle-half"></i>
+            <span id="bd-theme-text">Theme</span>
+        </a>
+        <ul class="dropdown-menu shadow position-absolute end-0 mt-0" aria-labelledby="bd-theme">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                    <i class="bi bi-sun-fill me-2"></i> Light
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                    <i class="bi bi-moon-stars-fill me-2"></i> Dark
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                    <i class="bi bi-circle-half me-2"></i> Auto
+                </button>
+            </li>
+        </ul>
+    </li>
+</ul>

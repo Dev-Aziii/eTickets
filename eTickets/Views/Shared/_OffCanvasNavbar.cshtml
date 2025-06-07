@@ -1,0 +1,90 @@
+﻿@* _OffcanvasNavbar.cshtml *@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <i class="bi bi-ticket-perforated"></i> eTickets
+        </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-unstyled">
+            <!-- Search Movie List -->
+            <li class="mb-3">
+                <form class="d-flex">
+                    <input class="form-control form-control-sm me-2" type="text" name="searchString" placeholder="Search movies" aria-label="Search">
+                    <button class="btn btn-outline-primary btn-sm" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </li>
+
+            <!-- Management Accordion -->
+            <li class="mb-3">
+                <div class="accordion accordion-flush" id="accordionManagement">
+                    <div class="accordion-item border-0">
+                        <h2 class="accordion-header" id="headingManagement">
+                            <button class="accordion-button collapsed border-0 bg-transparent shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseManagement" aria-expanded="false" aria-controls="collapseManagement">
+                                <i class="bi bi-gear-fill me-2"></i> Management
+                            </button>
+                        </h2>
+                        <div id="collapseManagement" class="accordion-collapse collapse" aria-labelledby="headingManagement" data-bs-parent="#accordionManagement">
+                            <div class="accordion-body p-0">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item border-0">
+                                        <a class="dropdown-item" asp-controller="Actors" asp-action="Index">
+                                            <i class="bi bi-person-video3"></i> Actors
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item border-0">
+                                        <a class="dropdown-item" asp-controller="Cinemas" asp-action="Index">
+                                            <i class="bi bi-building"></i> Cinemas
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item border-0">
+                                        <a class="dropdown-item" asp-controller="Producers" asp-action="Index">
+                                            <i class="bi bi-people-fill"></i> Producers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Theme Toggler Accordion -->
+            <li>
+                <div class="accordion accordion-flush" id="accordionTheme">
+                    <div class="accordion-item border-0">
+                        <h2 class="accordion-header" id="headingTheme">
+                            <button class="accordion-button collapsed border-0 bg-transparent shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTheme" aria-expanded="false" aria-controls="collapseTheme">
+                                <i class="bi bi-circle-half me-2"></i> Theme
+                            </button>
+                        </h2>
+                        <div id="collapseTheme" class="accordion-collapse collapse" aria-labelledby="headingTheme" data-bs-parent="#accordionTheme">
+                            <div class="accordion-body p-0">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item border-0">
+                                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                            <i class="bi bi-sun-fill me-2"></i> Light
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item border-0">
+                                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                            <i class="bi bi-moon-stars-fill me-2"></i> Dark
+                                        </button>
+                                    </li>
+                                    <li class="list-group-item border-0">
+                                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                            <i class="bi bi-circle-half me-2"></i> Auto
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
