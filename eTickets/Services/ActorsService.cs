@@ -1,7 +1,8 @@
+using eTickets.Data;
 using eTickets.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace eTickets.Data.Services
+namespace eTickets.Services
 {
     public class ActorsService(AppDbContext context) : IActorsService
     {
